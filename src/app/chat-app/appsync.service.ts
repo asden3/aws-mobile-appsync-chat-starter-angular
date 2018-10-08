@@ -11,8 +11,8 @@ export class AppsyncService {
 
   constructor() {
     const client = new AWSAppSyncClient({
-      url: appSyncConfig.graphqlEndpoint,
-      region: appSyncConfig.region,
+      url: appSyncConfig.aws_appsync_graphqlEndpoint,
+      region: appSyncConfig.aws_appsync_region,
       auth: {
         type: AUTH_TYPE.AMAZON_COGNITO_USER_POOLS,
         jwtToken: async () => (await Auth.currentSession()).getIdToken().getJwtToken()
